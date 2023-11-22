@@ -24,3 +24,10 @@ body{
   justify-content: space-evenly;
   width: 100%;
 }
+
+.end-row{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100%;
+}

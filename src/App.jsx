@@ -15,31 +15,31 @@ function App() {
     setScreenValue(eval(screenValue).toString())
   }
 
+  const clearScreen = () => {
+    setScreenValue('')
+  }
+
+  const deleteChar = () => {
+    setScreenValue(screenValue.slice(0, -1))
+  }
+
   return (
     <main>
       <div className="calc-body">
         <Screen result={screenValue} />
         <div className="row">
           <OperatorButton
-            calculateResult={calculateResult}
+            clearScreen={clearScreen}
             updateScreen={updateScreen}
             sign="AC"
           />
           <OperatorButton
-            calculateResult={calculateResult}
+            deleteChar={deleteChar}
             updateScreen={updateScreen}
             sign="C"
           />
-          <OperatorButton
-            calculateResult={calculateResult}
-            updateScreen={updateScreen}
-            sign="+"
-          />
-          <OperatorButton
-            calculateResult={calculateResult}
-            updateScreen={updateScreen}
-            sign="-"
-          />
+          <OperatorButton updateScreen={updateScreen} sign="+" />
+          <OperatorButton updateScreen={updateScreen} sign="-" />
         </div>
         <div className="row">
           <NumberButton updateScreen={updateScreen} number="1" />
@@ -51,11 +51,7 @@ function App() {
           <NumberButton updateScreen={updateScreen} number="4" />
           <NumberButton updateScreen={updateScreen} number="5" />
           <NumberButton updateScreen={updateScreen} number="6" />
-          <OperatorButton
-            calculateResult={calculateResult}
-            updateScreen={updateScreen}
-            sign="/"
-          />
+          <OperatorButton updateScreen={updateScreen} sign="/" />
         </div>
         <div className="row">
           <NumberButton updateScreen={updateScreen} number="7" />
@@ -66,6 +62,10 @@ function App() {
             updateScreen={updateScreen}
             sign="="
           />
+        </div>
+        <div className="end-row">
+          <NumberButton updateScreen={updateScreen} number="0" />
+          <NumberButton updateScreen={updateScreen} number="." />
         </div>
       </div>
     </main>
