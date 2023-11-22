@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import '../components_styles/OperatorButton.css'
 
-export function OperatorButton({ sign, updateScreen }) {
+export function OperatorButton({ sign, updateScreen, calculateResult }) {
   const handleClick = () => {
-    updateScreen(sign)
+    sign === '=' ? calculateResult() : updateScreen(sign)
   }
 
   return (
