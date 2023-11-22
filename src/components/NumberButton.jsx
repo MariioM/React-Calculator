@@ -7,7 +7,7 @@ export function NumberButton({ number, updateScreen }) {
   }
 
   return (
-    <button onClick={handleClick} className="button-container">
+    <button onClick={handleClick} className="number-button-container">
       <p>{number}</p>
     </button>
   )
