@@ -1,15 +1,24 @@
-import { ButtonRow } from './components/ButtonRow'
+import { useState } from 'react'
+import { NumberButton } from './components/NumberButton'
 import { Screen } from './components/Screen'
 import './App.css'
 
 function App() {
+  const [screenValue, setScreenValue] = useState('')
+
+  const updateScreen = (value) => {
+    setScreenValue(screenValue + value)
+  }
   return (
     <main>
       <div className="calc-body">
-        <Screen result="0" />
-        <ButtonRow number1="1" number2="2" number3="3" text="X" />
-        <ButtonRow number1="4" number2="5" number3="6" text="-" />
-        <ButtonRow number1="7" number2="8" number3="9" text="+" />
+        <Screen result={screenValue} />
+        <div className="row">
+          <NumberButton updateScreen={updateScreen} number="1" />
+          <NumberButton updateScreen={updateScreen} number="2" />
+          <NumberButton updateScreen={updateScreen} number="3" />
+          <NumberButton updateScreen={updateScreen} number="4" />
+        </div>
       </div>
     </main>
   )

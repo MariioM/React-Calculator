@@ -4,9 +4,7 @@ import '../components_styles/Screen.css'
 export function Screen({ result }) {
   return (
     <>
-      <div className="screen">
-        <p>{result}</p>
-      </div>
+      <input className="screen" value={result} disabled />
       <hr />
     </>
   )
