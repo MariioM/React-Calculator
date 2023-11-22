@@ -1,0 +1,18 @@
+body{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-body{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 5px;
+  height: 80vh;
+  width: 25vw;
+  border: 2px solid #fff;
+  border-radius: 20px ;
+  background-color: rgb(23, 23, 23);
+}
